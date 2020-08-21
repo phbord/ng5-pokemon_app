@@ -35,13 +35,13 @@
                     </table>
                 </div>
                 <div class="card-action">
-                    <a class="waves-effect waves-light btn" (click)="goBack()">Retour</a>
-                    <!--<a class="waves-effect waves-light btn" (click)="goEdit(pokemon)">Editer<a>
-                    <a (click)="delete(pokemon)">Supprimer</a>-->
+                    <a (click)="goBack()" class="waves-effect waves-light btn">Retour</a>
+                    <a (click)="goEdit(pokemon)" class="waves-effect waves-light btn">Editer</a>
+                    <a (click)="delete(pokemon)">Supprimer</a>
                 </div>
             </div>
         </div>
     </div>
     <h4 *ngIf='!pokemon' class="center">
-        Aucun pokémon à afficher !
+        <pkmn-loader></pkmn-loader>
     </h4>

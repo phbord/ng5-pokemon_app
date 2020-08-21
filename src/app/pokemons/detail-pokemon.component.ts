@@ -23,23 +23,22 @@ export class DetailPokemonComponent implements OnInit {
 		// snapshot => récupération des paramètres de façon synchrone
 		let id = +this.route.snapshot.params['id'];
 
-		this.pokemon = this.pokemonsService.getPokemon(id);
-		/*this.pokemonsService.getPokemon(id)
-			.subscribe(pokemon => this.pokemon = pokemon);*/
-	}
-
-	goBack(): void {
-		this.router.navigate(['/pokemons']);
-	}
-
-	/*goEdit(pokemon: Pokemon): void {
-		let link = ['/pokemon/edit', pokemon.id];
-		this.router.navigate(link);
+		this.pokemonsService.getPokemon(id)
+			.subscribe(pokemon => this.pokemon = pokemon);
 	}
 
 	delete(pokemon: Pokemon): void {
 		this.pokemonsService.deletePokemon(pokemon)
 			.subscribe(_ => this.goBack());
-	}*/
+	}
+
+	goBack(): void {
+		this.router.navigate(['/pokemon/all']);
+	}
+
+	goEdit(pokemon: Pokemon): void {
+		let link = ['/pokemon/edit', pokemon.id];
+		this.router.navigate(link);
+	}
 
 }

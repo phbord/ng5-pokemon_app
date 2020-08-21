@@ -2,6 +2,10 @@
 <input #box (keyup.enter)="values=box.value" (blur)="values=box.value">
 <div class='container'>
     <div class="row">
+        <!-- Pokemons search form -->
+        <pokemon-search></pokemon-search>
+
+        <!-- Pokemons list -->
         <div *ngFor='let pokemon of pokemons' class="col s6 m4">
             <div class="card horizontal" (click)="selectPokemon(pokemon)" pkmnBorderCard="red">
                 <div class="card-image">
