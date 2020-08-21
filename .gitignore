@@ -21,3 +21,5 @@ package-lock.json
 
 # IDE - VSCode
 .vscode/*
+
+.DS_Store
