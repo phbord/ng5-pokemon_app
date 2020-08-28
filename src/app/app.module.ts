@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser'; //démarre le module dans le navigateur + @angular/common
+import { BrowserModule, Title } from '@angular/platform-browser'; //démarre le module dans le navigateur + @angular/common
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { FormsModule } from '@angular/forms';
@@ -26,7 +26,9 @@ import { PageNotFoundComponent } from './page-not-found.component';
 		AppRoutingModule,
 	],
 	exports: [], //sous-ensemble de classes de vues à exporter
-	providers: [], //service au module
+	providers: [ //service au module
+		Title,
+	],
 	declarations: [ //classes de vues (composant, directives et pipes)
 		AppComponent,
 		LoginComponent,

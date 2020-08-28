@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/delay';
+import { Observable, of } from 'rxjs';
+//import 'rxjs/add/observable/of';
+import * as Rx from 'rxjs/Rx';
+import { delay } from 'rxjs/operators';
+//import 'rxjs/add/operator/do';
+//import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class AuthService {
@@ -14,7 +16,8 @@ export class AuthService {
 		// Faites votre appel à un service d'authentification...
 		let isLoggedIn = (name === 'admin' && password === 'admin');
 
-		return Observable.of(true).delay(1000).do(val => this.isLoggedIn = isLoggedIn);
+		//return Observable.of(true).delay(1000).do(val => this.isLoggedIn = isLoggedIn);
+		return Rx.Observable.of(true).delay(1000).do(() => this.isLoggedIn = isLoggedIn);
 	}
 
 	// Une méthode de déconnexion

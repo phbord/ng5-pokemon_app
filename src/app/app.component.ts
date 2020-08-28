@@ -7,4 +7,10 @@ import { POKEMONS } from './pokemons/mock-pokemons';
 	selector: 'pokemon-app',
 	templateUrl: './app/app.component.html'
 })
-export class AppComponent {}
+export class AppComponent {
+	public constructor(private titleService: any) {}
+ 
+	ngOnInit() {
+		this.titleService.setTitle("Mon Titre !");  
+	}
+}

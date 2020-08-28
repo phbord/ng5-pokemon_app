@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs'; //of permet de transformer les données passées en paramètres, en Observable
+import { Observable, of } from 'rxjs'; //of permet de transformer les données passées en paramètres, en Observable
 import { catchError, map, tap } from 'rxjs/operators';
-import { of } from 'rxjs/observable/of';
 
 import { Pokemon } from './pokemon';
 import { POKEMONS } from './mock-pokemons';
